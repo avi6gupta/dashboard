@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <form action="submit_subway/" method="post">
+    {% csrf_token %}
+    {% for m in m_list %}
+        {% for o in m.options.all %}
+            <input type="radio" name="options" value="{{ o }}">{{ o }} <br>
+
+        {% endfor %}
+    {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
+</body>
+</html>
