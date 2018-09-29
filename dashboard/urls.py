@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from calendarNote import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('order/', include('order.urls')),
+    path('calendar', views.CalendarListView.as_view(), name='calendar'),
+    path('entry/<int:pk>', views.EntryDetailView.as_view(), name='details'),
+    path('entry/add', views.add, name='add'),
+    path('entry/delete/<int:pk>', views.delete, name='delete'),
+    path('admin/', admin.site.urls),
 ]

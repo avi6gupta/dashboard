@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'calendarNote.apps.CalendarnoteConfig',
     'order.apps.OrderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
