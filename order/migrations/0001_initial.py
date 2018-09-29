@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             name='Restaurant',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=30)),
+                ('name.html', models.CharField(max_length=30)),
             ],
         ),
         migrations.CreateModel(

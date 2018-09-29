@@ -12,7 +12,7 @@ class Entry(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.name} {self.date}'
+        return f'{self.name.html} {self.date}'
 
     def short_description(self):
         return self.description[:15]
