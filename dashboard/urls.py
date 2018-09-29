@@ -28,6 +28,7 @@ urlpatterns = [
     path('entry/delete/<int:pk>', views.delete, name='delete'),
     path('admin/', admin.site.urls),
     path('clubs/', include('clubs.urls')),
+    path('home/', include('home.urls')),
     path('signup/', include('accounts.urls')),
     path('change/', include('accounts.urls')),
     path('', include('django.contrib.auth.urls')),
