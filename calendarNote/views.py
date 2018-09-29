@@ -49,7 +49,7 @@ def add(request):
                 end_time=end_time,
             )
 
-            return HttpResponseRedirect('/calendar')
+            return HttpResponseRedirect('/todo')
 
     else:
         form = EntryForm()

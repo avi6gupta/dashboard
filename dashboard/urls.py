@@ -22,11 +22,12 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('order/', include('order.urls')),
-    path('calendar', views.CalendarListView.as_view(), name='calendar'),
+    path('todo/', views.CalendarListView.as_view(), name='calendar'),
     path('entry/<int:pk>', views.EntryDetailView.as_view(), name='details'),
     path('entry/add', views.add, name='add'),
     path('entry/delete/<int:pk>', views.delete, name='delete'),
     path('admin/', admin.site.urls),
     path('clubs/', include('clubs.urls')),
+    path('home/', include('home.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
