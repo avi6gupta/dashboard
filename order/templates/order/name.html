@@ -6,11 +6,11 @@
 </head>
 <body>
 {% block content %}
-    <form action="submit_subway/" method="post">
+    <form action="submit/" method="post">
     {% csrf_token %}
     {% for m in m_list %}
         {% for o in m.options.all %}
-            <input type="radio" name="options" value="{{ o }}">{{ o }} <br>
+            <input type="radio" name="options" value="{{ o }}">{{ o }}  price = {{ o.price }}<br>
 
         {% endfor %}
     {% endfor %}

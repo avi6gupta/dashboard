@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=30)
+    img = models.ImageField(upload_to="restaurant_images", blank=True)
+    description = models.CharField(max_length=50, default=0)
 
     def __str__(self):
         return self.name
@@ -11,6 +13,7 @@ class Restaurant(models.Model):
 
 class Option(models.Model):
     option = models.CharField(max_length=50)
+    price = models.IntegerField(default=0)
 
     def __str__(self):
         return self.option
