@@ -29,3 +29,4 @@ class OrderList(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     order = models.CharField(max_length=3000)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, default=0)
+    price = models.IntegerField(default=0)
