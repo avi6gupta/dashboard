@@ -59,6 +59,12 @@ def subway_submit(request):
             s += '\n'
         ol.order = s
         ol.user = request.user
+        p = 0
+        for o in order_list:
+            temp_list = Option.objects.filter(option=o)
+            p += temp_list[0].price
+
+        ol.price = p
         ol.save()
         return HttpResponseRedirect('/order/subway_check')
 
@@ -75,6 +81,12 @@ def bnr_submit(request):
             s += '\n'
         ol.order = s
         ol.user = request.user
+        p = 0
+        for o in order_list:
+            temp_list = Option.objects.filter(option=o)
+            p += temp_list[0].price
+
+        ol.price = price
         ol.save()
         return HttpResponseRedirect('/order/bnr_check')
 
