@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+    {% for c in c_list %}
+        <a href="{{ c.name }}">{{ c.name }}</a>
+    {% endfor %}
+{% endblock %}
+
+</body>
+</html>

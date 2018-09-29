@@ -11,13 +11,33 @@ def rest(request):
 
 
 def subway(request):
-    r = Restaurant.objects.filter(name='subway')
+    r = Restaurant.objects.filter(name='Subway')
     m_list = MenuObj.objects.filter(restaurant=r[0])
     context = {'m_list': m_list}
-    return render(request, 'order/subway.html', context)
+    return render(request, 'order/name.html', context)
 
 
-def submit_subway(request):
+# def subway_check(request):
+#     ol = OrderList.objects.all()
+#     context = {'ol': ol}
+#     return render(request, 'order/check.html', context)
+
+
+def fw(request):
+    r = Restaurant.objects.filter(name='Florentine')
+    m_list = MenuObj.objects.filter(restaurant=r[0])
+    context = {'m_list': m_list}
+    return render(request, 'order/name.html', context)
+
+
+def bnr(request):
+    r = Restaurant.objects.filter(name='Baskin-Robbins')
+    m_list = MenuObj.objects.filter(restaurant=r[0])
+    context = {'m_list': m_list}
+    return render(request, 'order/name.html', context)
+
+
+def submit(request):
     if request.method == "POST":
         ol = OrderList()
         order_list = request.POST.get('options')
@@ -28,13 +48,22 @@ def submit_subway(request):
         ol.order = s
         ol.user = request.user
         ol.save()
-        return HttpResponseRedirect('/order/subway_check')
+        return HttpResponseRedirect('/order/check')
+
+
+def fw_check(request):
+    ol = OrderList.objects.all()
+    context = {'ol': ol}
+    return render(request, 'order/check.html', context)
+
+
+def bnr_check(request):
+    ol = OrderList.objects.all()
+    context = {'ol': ol}
+    return render(request, 'order/check.html', context)
 
 
 def subway_check(request):
     ol = OrderList.objects.all()
     context = {'ol': ol}
-    return render(request, 'order/subway_check.html', context)
-
-
-
+    return render(request, 'order/check.html', context)
