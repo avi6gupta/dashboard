@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/change/secy_changed/" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username" />
+        <input type="submit" name="Change Secy">
+    </form>
+</body>
+</html>
