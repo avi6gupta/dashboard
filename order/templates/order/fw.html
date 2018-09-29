@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <form action="fw_submit/" method="post">
+    {% csrf_token %}
+
+        {% for o in o_list %}
+            <input type="checkbox" name="options" value="{{ o }}">{{ o }}  price = {{ o.price }}<br>
+
+        {% endfor %}
+
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
+</body>
+</html>

@@ -14,6 +14,7 @@ class Restaurant(models.Model):
 class Option(models.Model):
     option = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, default=0)
 
     def __str__(self):
         return self.option
@@ -27,3 +28,4 @@ class MenuObj(models.Model):
 class OrderList(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     order = models.CharField(max_length=3000)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, default=0)
