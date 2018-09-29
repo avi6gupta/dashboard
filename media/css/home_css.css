@@ -1,0 +1,92 @@
+#home{
+    background: url("home-bg.jpg") no-repeat center center;
+    background-size: cover;
+    /*min-height: 650px;*/
+    /*width: 100px;*/
+}
+.a img:hover{
+    transform: rotate(360deg); transition: transform 0.5s;
+}
+
+#header{
+    background-color: rgba(0,0,0,0.45);
+    min-height: 650px;
+}
+
+#dash .member {
+  text-align: center;
+  /*margin-bottom: 20px;*/
+  /*background: #000;*/
+  position: relative;
+  height: 200px;
+
+}
+
+#dash .member .member-info {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+
+}
+
+#dash .member .member-info-content {
+  margin-top: -50px;
+  transition: margin 0.2s;
+}
+
+#dash .member:hover .member-info {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transition: 0.4s;
+}
+
+#dash .member:hover .member-info-content {
+  margin-top: 0;
+  transition: margin 0.4s;
+}
+
+#dash .member h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#dash .member h5 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#dash .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+
+#dash .member .social {
+  margin-top: 15px;
+}
+
+#dash .member .social a {
+  transition: none;
+  color: #fff;
+}
+
+#dash .member .social a:hover {
+  color: #18d26e;
+}
+
+#dash .member .social i {
+  font-size: 28px;
+  margin: 0 2px;
+}
